@@ -1,13 +1,23 @@
 {
-  "name": "template-app",
+  "name": "ollama-lab",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "Professional web-based interface for interacting with Ollama AI models",
+  "author": "OllamaLab Team",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "preview": "vite preview",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "lint:fix": "eslint . --fix",
+    "type-check": "tsc --noEmit",
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
+    "clean": "rm -rf dist build coverage .parcel-cache",
+    "analyze": "vite-bundle-analyzer dist --analyze",
+    "prepare": "husky install || true"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.15",
@@ -23,6 +33,7 @@
   "devDependencies": {
     "@eslint/js": "^9.21.0",
     "@types/js-cookie": "^3.0.6",
+    "@types/node": "^24.5.2",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",
@@ -30,6 +41,8 @@
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^15.15.0",
+    "prettier": "^3.6.2",
+    "terser": "^5.44.0",
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.24.1",
     "vite": "^6.2.0"
